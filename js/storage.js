@@ -18,7 +18,7 @@ const sampleRecipes = [
     prepTime: 15,
     cookTime: 50,
     difficulty: "Easy",
-    imageURL: "Assets/1.jpg",
+    imageURL: "/Assets/1.jpg",
     type: "Veg",
   },
   {
@@ -33,7 +33,7 @@ const sampleRecipes = [
     prepTime: 10,
     cookTime: 10,
     difficulty: "Easy",
-    imageURL: "Assets/Simple Fluffy Pancakes.jpg",
+    imageURL: "/Assets/Simple Fluffy Pancakes.jpg",
     type: "Veg",
   },
   {
@@ -48,7 +48,7 @@ const sampleRecipes = [
     prepTime: 15,
     cookTime: 15,
     difficulty: "Medium",
-    imageURL: "Assets/2.jpeg",
+    imageURL: "/Assets/2.jpeg",
     type: "Veg",
   },
   {
@@ -63,7 +63,7 @@ const sampleRecipes = [
     prepTime: 30,
     cookTime: 45,
     difficulty: "Hard",
-    imageURL: "Assets/Traditional Vegetable Biryani.jpg",
+    imageURL: "/Assets/Traditional Vegetable Biryani.jpg",
     type: "Veg",
   },
   {
@@ -78,7 +78,7 @@ const sampleRecipes = [
     prepTime: 20,
     cookTime: 35,
     difficulty: "Medium",
-    imageURL: "Assets/Authentic Chicken Tikka Masala .jpg",
+    imageURL: "/Assets/Authentic Chicken Tikka Masala .jpg",
     type: "Non-Veg",
   },
   {
@@ -93,7 +93,7 @@ const sampleRecipes = [
     prepTime: 20,
     cookTime: 120,
     difficulty: "Hard",
-    imageURL: "Assets/Lamb Rogan Josh.jpg",
+    imageURL: "/Assets/Lamb Rogan Josh.jpg",
     type: "Non-Veg",
   },
   {
@@ -108,7 +108,7 @@ const sampleRecipes = [
     prepTime: 25,
     cookTime: 40,
     difficulty: "Medium",
-    imageURL: "Assets/indian-chicken-biryani.webp",
+    imageURL: "/Assets/indian-chicken-biryani.webp",
     type: "Non-Veg",
   },
   {
@@ -123,7 +123,7 @@ const sampleRecipes = [
     prepTime: 15,
     cookTime: 15,
     difficulty: "Easy",
-    imageURL: "Assets/Goan Fish Curry.jpg",
+    imageURL: "/Assets/Goan Fish Curry.jpg",
     type: "Non-Veg",
   },
 ];
