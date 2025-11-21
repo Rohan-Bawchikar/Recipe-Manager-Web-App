@@ -1,13 +1,14 @@
-// app.js
+// js/app.js
 
-import { loadRecipes, saveRecipes, initializeData, THEME_KEY } from '../storage.js';
-import { validateRecipe } from '../validation.js';
+// CHANGED: Use './' because these files are in the SAME folder as app.js
+import { loadRecipes, saveRecipes, initializeData, THEME_KEY } from './storage.js';
+import { validateRecipe } from './validation.js';
 import { 
     showView, toggleTheme, loadThemePreference, 
     renderRecipeList, renderRecipeDetail, 
     populateEditForm, displayFormErrors, hideFormErrors,
     prepareAddForm 
-} from '../ui.js';
+} from './ui.js';
 
 
 let recipes = []; // State container for all recipes
@@ -103,7 +104,6 @@ function togglePin(id) {
         saveRecipes(recipes);
         
         // 1. Update the Detail View button state immediately
-        // We pass the specific updated recipe object to renderRecipeDetail
         renderRecipeDetail(recipes[recipeIndex]);
         
         // 2. Refresh the background list view so the sorting updates
