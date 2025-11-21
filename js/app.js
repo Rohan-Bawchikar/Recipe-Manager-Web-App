@@ -1,13 +1,13 @@
 // app.js
 
-import { loadRecipes, saveRecipes, initializeData, THEME_KEY } from './storage.js';
-import { validateRecipe } from './validation.js';
+import { loadRecipes, saveRecipes, initializeData, THEME_KEY } from '../storage.js';
+import { validateRecipe } from '../validation.js';
 import { 
     showView, toggleTheme, loadThemePreference, 
     renderRecipeList, renderRecipeDetail, 
     populateEditForm, displayFormErrors, hideFormErrors,
     prepareAddForm 
-} from './ui.js';
+} from '../ui.js';
 
 
 let recipes = []; // State container for all recipes
