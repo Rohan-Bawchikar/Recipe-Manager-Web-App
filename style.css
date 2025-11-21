@@ -832,7 +832,7 @@ body.dark-mode footer {
         min-width: 0; /* vital for flexbox sizing */
     }
 
-    /* Detail View Adaptation */
+    /* Mobile Detail View Adaptation */
     #recipe-detail-overlay {
         flex-direction: column;
         width: 95%;
@@ -840,6 +840,7 @@ body.dark-mode footer {
         max-height: 90vh;
         /* Scrollable content container */
         overflow-y: auto; 
+        /* FIX: Prevents horizontal scrolling */
         overflow-x: hidden;
     }
     
@@ -853,15 +854,30 @@ body.dark-mode footer {
     .detail-image-wrapper img {
         max-height: 100%;
         width: 100%;
-        object-fit: cover; /* Cover looks better for the banner style on mobile */
+        /* Setting to cover for the banner style on mobile detail view image */
+        object-fit: cover; 
         border-radius: 10px 10px 0 0;
     }
 
     .detail-text-content {
         padding: 20px;
         width: 100%;
-        /* Allow text content to scroll independently if needed */
+        /* Ensure no horizontal overflow here */
         overflow-y: visible; 
+        word-wrap: break-word; /* Ensure long words break */
+        overflow-x: hidden; /* FIX: Prevents text content from causing horizontal scroll */
+    }
+    
+    .detail-text-content h2 {
+        /* Ensure title fits and breaks word if necessary */
+        word-wrap: break-word;
+        font-size: 2.5em; /* Slightly smaller font size for mobile titles */
+    }
+    
+    .detail-time-box {
+        /* Allow time box content to wrap if absolutely necessary on tiny screens, but maintain layout */
+        white-space: normal;
+        flex-wrap: wrap; 
     }
     
     .detail-actions {
@@ -884,7 +900,8 @@ body.dark-mode footer {
     }
     
     .card-image {
-        object-fit: cover; /* Revert to cover for the big banner look on mobile cards */
+        /* Keep cover for the list view cards on tiny screens */
+        object-fit: cover; 
     }
 
     .card-content {
