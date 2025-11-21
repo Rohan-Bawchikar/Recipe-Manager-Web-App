@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Manager | Local Storage CRUD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- UPDATED VERSION v=1.2 to force new CSS load -->
+    <link rel="stylesheet" href="style.css?v=1.2"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>My Recipe Manager</h1>
+        <div class="header-actions">
+            <button id="theme-toggle" onclick="RecipeApp.toggleTheme()" aria-label="Toggle dark and light theme">
+                <i class="fas fa-sun"></i> 
+            </button>
+            <button id="nav-add-recipe" onclick="RecipeApp.prepareAddForm(); RecipeApp.showView('form-view')">
+                <i class="fas fa-plus"></i> Add Recipe
+            </button>
+        </div>
+    </header>
+
+    <main id="list-view" class="view active">
+        <div class="controls">
+            <input type="text" id="search-input" placeholder="Search recipes by title..." onkeyup="RecipeApp.filterRecipes()">
+            
+            <select id="difficulty-filter" onchange="RecipeApp.filterRecipes()" aria-label="Filter recipes by difficulty">
+                <option value="All">Difficulty (All)</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+
+            <select id="type-filter" onchange="RecipeApp.filterRecipes()" aria-label="Filter recipes by type (Vegetarian or Non-Vegetarian)">
+                <option value="All">Type (All)</option>
+                <option value="Veg">Vegetarian</option>
+                <option value="Non-Veg">Non-Vegetarian</option>
+            </select>
+        </div>
+        <section id="recipe-list" class="recipe-grid"></section>
+    </main>
+
+    <main id="detail-view" class="view hidden">
+        <button onclick="RecipeApp.showView('list-view')" class="back-button"><i class="fas fa-arrow-left"></i> Back to List</button>
+        <section id="recipe-detail-content"></section> 
+    </main>
+
+    <main id="form-view" class="view hidden">
+        <button onclick="RecipeApp.showView('list-view')" class="back-button"><i class="fas fa-times"></i> Cancel</button>
+        <h2 id="form-header"><span id="form-title">Add</span> New Recipe</h2>
+        <form id="recipe-form">
+            <input type="hidden" id="recipe-id">
+
+            <label for="title">Title <span class="required">*</span></label>
+            <input type="text" id="title" required placeholder="e.g., Simple Fluffy Pancakes">
+
+            <label for="description">Description <span class="required">*</span></label>
+            <textarea id="description" rows="3" required placeholder="A brief, appetizing summary."></textarea>
+
+            <div class="select-group">
+                <div>
+                    <label for="type">Type <span class="required">*</span></label>
+                    <select id="type" required>
+                        <option value="">Select Type</option>
+                        <option value="Veg">Vegetarian</option>
+                        <option value="Non-Veg">Non-Vegetarian</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="difficulty">Difficulty <span class="required">*</span></label>
+                    <select id="difficulty" required>
+                        <option value="">Select Difficulty</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="time-inputs">
+                <div>
+                    <label for="prepTime">Prep Time (mins) <span class="required">*</span></label>
+                    <input type="number" id="prepTime" required min="1" placeholder="e.g., 15">
+                </div>
+                <div>
+                    <label for="cookTime">Cook Time (mins)</label>
+                    <input type="number" id="cookTime" min="0" value="0" placeholder="e.g., 50">
+                </div>
+            </div>
+
+            <label for="ingredients">Ingredients (one per line) <span class="required">*</span></label>
+            <textarea id="ingredients" rows="5" required placeholder="List each ingredient on a new line."></textarea>
+
+            <label for="steps">Steps (one per line) <span class="required">*</span></label>
+            <textarea id="steps" rows="5" required placeholder="Outline each step on a new line."></textarea>
+            
+            <label for="imageURL">Optional Image URL</label>
+            <input type="url" id="imageURL" placeholder="Paste a direct image link here (http/https)">
+
+            <div id="form-errors" class="error-message"></div>
+            <button type="submit" id="submit-button"><i class="fas fa-save"></i> Save Recipe</button>
+        </form>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> My Recipe Manager. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#"><i class="fas fa-book"></i> Documentation</a>
+                <a href="#"><i class="fab fa-github"></i> Source</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <!-- IMPORTANT: Must load as a module and load app.js -->
+    <script type="module" src="app.js?v=1.2"></script> 
+</body>
+</html>
