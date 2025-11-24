@@ -1173,6 +1173,7 @@ body.dark-mode footer {
     animation-delay: 1.3s;
 }
 
+/* Star twinkle animation */
 @keyframes star-twinkle {
     0% {
         transform: scale(1);
@@ -1245,6 +1246,7 @@ header,
     margin: 0 auto 30px auto;
 }
 
+/* Dark Mode Adjustments for Glass Effect */
 body.dark-mode header,
 body.dark-mode .controls {
     background-color: rgba(14, 18, 30, 0.9);
