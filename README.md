@@ -1,4 +1,4 @@
-# 🎨 **Modern Gradient + Premium Portfolio README.md (Updated Version)**
+# 🎨 **Modern Gradient + Premium README.md **
 
 ```md
 <div align="center">
