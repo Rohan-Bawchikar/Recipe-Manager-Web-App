@@ -25,7 +25,7 @@ No backend. No database. **Pure client-side magic.**
 
 ### 🚀 Try the Live Project
 
-🔗 **Live Demo:** https://rohan-bawchikar.github.io/Recipe-Manager-Web-App/
+🔗 **Live Demo:** [Click Here](https://rohan-bawchikar.github.io/Recipe-Manager-Web-App/)
 
 ### 🎞️ Live Demo GIF
 
