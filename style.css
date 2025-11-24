@@ -1197,3 +1197,90 @@ body.dark-mode footer {
         transform: translateX(calc(var(--tm-scale) * 26px)) rotate(360deg);
     }
 }
+
+/* ==================================================================
+   NEW: CENTER LAYOUT LIKE DASHBOARD (PURPLE GRADIENT BACKGROUND STAYS)
+   ================================================================== */
+
+/* Reduce horizontal padding so content can be perfectly centered in a fixed width */
+body {
+    padding: 20px 0;
+}
+
+/* Main centered width for large screens */
+header,
+.controls,
+.recipe-grid,
+#form-view,
+footer {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Also center any generic .view container content if needed */
+.view {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Slight glassmorphism feel for main strips */
+header,
+.controls {
+    /* Glass effect */
+    background-color: rgba(20, 24, 38, 0.8);
+
+    /* Safari + iOS support */
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    /* Existing layout styling */
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+}
+
+body.dark-mode header,
+body.dark-mode .controls {
+    background-color: rgba(14, 18, 30, 0.9);
+}
+
+/* Make cards feel a bit glassy as well */
+.recipe-card {
+    background: radial-gradient(circle at 70% 50%, 
+                rgba(255, 255, 255, 0.10) 0%, 
+                rgba(255, 255, 255, 0.05) 40%, 
+                rgba(0, 0, 0, 0.35) 100%);
+
+    /* Safari + iOS support */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    /* keep your existing styling */
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--input-border);
+    overflow: hidden;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+
+/* Responsive: on small screens, let content use full width with padding */
+@media (max-width: 900px) {
+    header,
+    .controls,
+    .recipe-grid,
+    #form-view,
+    footer,
+    .view {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
